@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body {
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    /* background-color: #1c1c1c; */
+    color: #ffffff;
+    padding: 0 30px;
+}
+
+nav img {
+    height: 80%;
+}
+
+/* Style for the logo */
+.logo {
+   
+    border-radius: 50%;
+    object-fit: cover; /* Ensures the entire image is visible */
+    margin-right: 10px;
+  }
+  
+  /* Animation for the logo */
+  .logo:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+
+  
+nav div:last-child {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+div button {
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: black;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+div button:hover {
+    background-color: #a62323;
+}
+
+.slider {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    margin-top: 70px;
+    position: relative;
+    margin-top: 30px;
+    background-color: #222;
+}
+
+
+.slides {
+    width: 500%;
+    height: 500px;
+    display: flex;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 20%;
+    transition: 2s;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.navigation-manual {
+    position: absolute;
+    width: 100%;
+    margin-top: -25px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn {
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 1s;
+    background-color: transparent;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 3px #000;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 10px;
+}
+
+.manual-btn:hover {
+    background-color: #fff;
+}
+
+#radio1:checked~.first {
+    margin-left: 0;
+}
+
+#radio2:checked~.first {
+    margin-left: -20%;
+}
+
+#radio3:checked~.first {
+    margin-left: -40%;
+}
+
+#radio4:checked~.first {
+    margin-left: -60%;
+}
+
+#radio5:checked~.first {
+    margin-left: -80%;
+}
+
+
+.navigation-auto {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 475px;
+}
+
+.navigation-auto div {
+    border: 2px solid rgba(211, 211, 211, 0.651);
+    padding: 1.9px;
+    border-radius: 50%;
+    transition: 1s;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.navigation-auto div:hover {
+    background-color: #fff;
+}
+
+.auto-btn1:checked~.navigation-auto .auto-btn1,
+.auto-btn2:checked~.navigation-auto .auto-btn2,
+.auto-btn3:checked~.navigation-auto .auto-btn3,
+.auto-btn4:checked~.navigation-auto .auto-btn4,
+.auto-btn5:checked~.navigation-auto .auto-btn5 {
+    background-color: #fff;
+}
+
+
+input[type=radio] {
+    display: none;
+}
+
+
+.slide-caption {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+
+.slider:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 10px solid #000;
+    border-radius: 10px;
+}
+
+/* =====================4boxes============== */
+.counters-container {
+    display: grid;
+    grid-template-columns: repeat(4, calc(25% - 20px));
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+    color: #fff;
+    padding: 30px 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .counter-container {
+    text-align: center;
+    margin: 10px;
+    position: relative;
+    padding: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+  }
+  
+
+
+.counter-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.counter {
+    font-size: 3em;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 0.5em;
+
+}
+
+.counter::before {
+    content: attr(data-target);
+    animation: count-up 2s ease-out;
+}
+
+@keyframes count-up {
+    from {
+        content: "0";
+    }
+}
+
+.counter-container span {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 20px;
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* For tablet and mobile devices */
+@media only screen and (max-width: 768px) {
+    nav {
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        justify-content: space-between;
+        overflow-x: hidden;
+    }
+
+    nav img {
+        height: auto;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    nav div:last-child {
+        margin-top: 20px;
+    }
+
+    div button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    .counters-container {
+        display: grid;
+        grid-template-columns: repeat(2, calc(50% - 20px));
+        justify-content: space-between;
+        align-items: center;
+        background-color: #222;
+        color: #fff;
+        padding: 30px 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      }
+      
+      .counter-container {
+        text-align: center;
+        margin: 10px;
+        position: relative;
+        padding: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease-in-out;
+      }
+
+}
+
+/* For mobile devices */
+@media only screen and (max-width: 480px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        overflow-x: hidden;
+    }
+
+    nav img {
+        height: auto;
+        max-width: 100%;
+        margin-bottom: 10px;
+        width: auto;
+    }
+
+    div button {
+        padding: 6px 12px;
+        font-size: 17px;
+    }
+
+    .counters-container {
+        display: grid;
+        grid-template-columns: repeat(1, calc(100% - 20px));
+        justify-content: space-between;
+        align-items: center;
+        background-color: #222;
+        color: #fff;
+        padding: 30px 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      }
+      
+      .counter-container {
+        text-align: center;
+        margin: 10px;
+        position: relative;
+        padding: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease-in-out;
+      }
+
+
+
+
+
+
+
+
+
+
+
+}
