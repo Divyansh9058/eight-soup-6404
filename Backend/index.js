@@ -31,7 +31,7 @@ const http=require("http");
 const httpserver=http.createServer(app);
 
 const Server=require("socket.io");
-const io=new Server(httpserver,{ cors: { origin: "*" } });
+const io= Server(httpserver,{ cors: { origin: "*" } });
 app.use("/chess",express.static('public'));
 
 
