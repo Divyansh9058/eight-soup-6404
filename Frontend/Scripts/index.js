@@ -83,3 +83,16 @@ function numberWithCommas(x) {
 }
 
 
+const dropdown = document.querySelector('.dropdown');
+
+// Add a mouseover event listener to show the dropdown
+dropdown.addEventListener('mouseover', () => {
+  const dropdownContent = dropdown.querySelector('.dropdown-content');
+  dropdownContent.style.display = 'block';
+});
+
+// Add a mouseout event listener to hide the dropdown
+dropdown.addEventListener('mouseout', () => {
+  const dropdownContent = dropdown.querySelector('.dropdown-content');
+  dropdownContent.style.display = 'none';
+});
