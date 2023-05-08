@@ -1,9 +1,14 @@
 // const socketa = io("http://localhost:3000/", { transports: ["websocket"] })
 const socket = io("http://localhost:3000/", { transports: ["websocket"] })
+// const {redisClient} = require("../Redis/redis")
 
-//  let username = prompt("Enter your name", "a");
+
+//  let username =  redisClient.GET("name");
+// const username=localStorage.getItem("name")
+const username = sessionStorage.getItem("name")
+console.log(username);
 console.log(socket)
-// socket.emit("username", username)
+socket.emit("username", username)
 
 let namediv = document.getElementById("names");
 
@@ -115,7 +120,7 @@ socket.on("createMessage", (message, userName) => {
   messages.innerHTML =
     messages.innerHTML +
     `<div class="message">
-        <span ${true === true ? "class=outgoing"
+        <span  ${true === true ? "class=outgoing"
       : "class=incoming"}>${message}  <span class="time">   (From ${userName} ${cur_time}) <span></span>
        
     </div>`;
