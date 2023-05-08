@@ -13,7 +13,7 @@ inputloginform.addEventListener("submit", (e) => {
 
 async function login(obj) {
     try {
-        let responce = await fetch(`${apiuser}login`, {
+        let response = await fetch(`${apiuser}login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -21,12 +21,12 @@ async function login(obj) {
             body: JSON.stringify(obj)
         })
 
-        let res=await responce.json()
+        let res=await response.json()
 
         console.log(res);
 
-        if(res.status=="success"){
-            
+        if(res.msg=="login successful"){
+            sessionStorage.setItem("name",res.name)
             localStorage.setItem("auth_token", JSON.stringify(res.token));
             // let name=res.name;
             localStorage.setItem("name", JSON.stringify(res.name));

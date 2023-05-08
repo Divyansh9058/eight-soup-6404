@@ -1,4 +1,6 @@
 let submit_register = document.querySelector(".registerform");
+let RegisterUserDataBase =
+  JSON.parse(localStorage.getItem("userdatabase")) || [];
 
 let apiuser="http://localhost:3000/user/"
 
@@ -32,6 +34,7 @@ async function register(obj) {
         console.log(res)
 
         if (res.status == "success") {
+           
             alert("user has been succesfully created");
             window.location.href ="./login.html"
         }

@@ -6,6 +6,7 @@ const {connection}=require("./Configs/db");
 
 const {userRouter}=require("./Routes/user.routes");
 const { socketserver } = require("./Server/Script");
+
 // const {authentication} = require("./Middleware/Auth")
 
 const cookieParser = require("cookie-parser");
