@@ -38,7 +38,7 @@ nav img {
 }
 
 nav div:last-child {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   gap: 20px;
 }
@@ -91,6 +91,8 @@ button:hover:before {
     opacity: 0;
   }
 }
+
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -116,7 +118,7 @@ button:hover:before {
 }
 
 .dropdown-content {
-  display: none;
+  visibility: hidden;
   position: absolute;
   z-index: 10;
   top: 50px;
@@ -125,10 +127,11 @@ button:hover:before {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   padding: 10px;
   min-width: 200px;
+  transition: visibility 0.3s ease;
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+  visibility: visible;
 }
 
 .dropdown-link {
@@ -145,17 +148,6 @@ button:hover:before {
   color: white ;
   text-decoration: none;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -83,3 +83,10 @@ function numberWithCommas(x) {
 }
 
 
+const dropdownBtn = document.querySelector('.btnn');
+const dropdownContent = document.querySelector('.dropdown-content');
+
+dropdownBtn.addEventListener('click', () => {
+  dropdownContent.classList.toggle('show');
+});
+
