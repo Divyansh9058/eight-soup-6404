@@ -9,13 +9,9 @@ Features:-
 The online chess game project comes with the following features:
 
 User authentication and authorization system
-
 Multiplayer chess game with real-time updates
-
 Ability to view game history
-
 Leaderboard of top players
-
 Chat system to interact with other players
 
 Tech Stack
