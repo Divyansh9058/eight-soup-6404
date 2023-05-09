@@ -36,7 +36,7 @@
 <h2>Contributors</h2>
 
 <ul>
-	<li>Divyansh Goel</li>
+	<li>Divyansh Goel (Team Lead)</li>
 	<li>Debraj Roy</li>
 	<li>Dipanshi Tiwari</li>
 	<li>Md Faiyaz Alam</li>
