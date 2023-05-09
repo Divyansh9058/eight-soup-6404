@@ -37,8 +37,8 @@
 
 <ul>
 	<li>Divyansh Goel</li>
-	<li>Dipanshi Tiwari</li>
 	<li>Debraj Roy</li>
+	<li>Dipanshi Tiwari</li>
 	<li>Md Faiyaz Alam</li>
 	<li>Tanuj Kumar</li>
 </ul>
