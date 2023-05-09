@@ -23,11 +23,30 @@ submit_register.addEventListener("submit", async (event) => {
     let res = await response.json();
     console.log(res);
     if (res.status == "success") {
-      alert("User has been successfully created");
+      Swal.fire({
+        title: "Registered Successfully!",
+        text: "You are registered successfully.",
+        icon: "success",
+      }).then((res) => {
+        if (res.value) {
+          window.location.href = "./login.html";
+        } else {
+          Swal.fire({
+            title: "Wrong Credentials!",
+            text: "Try Again",
+            icon: "error",
+          });
+        }
+      });
     }
   } catch (err) {
-    console.log("Error saving user data to MongoDB");
+    Swal.fire({
+      title: "User Already Registered!",
+      text: "Please Login",
+      icon: "error",
+    });
   }
+
 
   // try {
   //   // Save user data to local storage
@@ -40,5 +59,5 @@ submit_register.addEventListener("submit", async (event) => {
   //   console.log("Error saving user data to local storage");
   // }
 
-  window.location.href = "./login.html";
+  // window.location.href = "./login.html";
 });

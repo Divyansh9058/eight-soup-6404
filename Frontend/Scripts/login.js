@@ -35,9 +35,23 @@ async function login(obj) {
 
             // document.cookie=`token=${res.token}`;
             // document.cookie=`token=${res.name}`;
+            Swal.fire({
+                title: "Logged In successfully!",
+                text: "You are logged in successfully.",
+                icon: "success",
+              }).then((res) => {
+                if (res.value) {
+                  window.location.href = "http://localhost:3000/chess/";
+                } else {
+                  Swal.fire({
+                    title: "Wrong Credentials!",
+                    text: "Try Again",
+                    icon: "error",
+                  });
+                }
+              });
 
-
-            window.location.href = "http://localhost:3000/chess/"
+            // window.location.href = "http://localhost:3000/chess/"
 
         }
 
@@ -46,7 +60,11 @@ async function login(obj) {
         }
     }
     catch (err) {
-        alert("wrong credentials")
+        Swal.fire({
+            title: "Wrong Credentials!",
+            text: "Try Again",
+            icon: "error",
+          });
         console.log("Some error");
     }
 }
