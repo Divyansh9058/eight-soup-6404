@@ -1,9 +1,9 @@
-# eight-soup-6404
+# RAPID CHESS
 
 Online Chess Game:- Rapid Chess
 This is a group project developed by 5 members in just 5 days, aimed at providing an online chess game platform for chess enthusiasts. The project is built using a tech stack that includes HTML, CSS, JavaScript, Express, MongoDB, Redis, and Socket.io.
 
-Features
+Features:- 
 The online chess game project comes with the following features:
 
 User authentication and authorization system
