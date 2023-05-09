@@ -29,7 +29,7 @@ async function login(obj) {
             sessionStorage.setItem("name",res.name)
             localStorage.setItem("auth_token", JSON.stringify(res.token));
             // let name=res.name;
-            localStorage.setItem("name", JSON.stringify(res.name));
+            localStorage.setItem("name", res.name);
             // alert("login successfull");
 
 

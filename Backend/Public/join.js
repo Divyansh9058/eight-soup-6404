@@ -1,6 +1,6 @@
 const socket = io("http://localhost:3000/", { transports: ["websocket"] });
 // const RegisterUserDataBase =
-// JSON.parse(localStorage.getItem("userdatabase")) || [];
+localStorage.getItem("name") || [];
 // const username = sessionStorage.getItem("name");
 let username
 function getName(username) {
