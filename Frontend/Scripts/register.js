@@ -29,16 +29,16 @@ submit_register.addEventListener("submit", async (event) => {
     console.log("Error saving user data to MongoDB");
   }
 
-  try {
-    // Save user data to local storage
-    let RegisterUserDataBase =
-      JSON.parse(localStorage.getItem("userdatabase")) || [];
-    RegisterUserDataBase.push(obj);
-    localStorage.setItem("userdatabase", JSON.stringify(RegisterUserDataBase));
-    alert("User data has been successfully saved to local storage");
-  } catch (err) {
-    console.log("Error saving user data to local storage");
-  }
+  // try {
+  //   // Save user data to local storage
+  //   let RegisterUserDataBase =
+  //     JSON.parse(localStorage.getItem("userdatabase")) || [];
+  //   RegisterUserDataBase.push(obj);
+  //   localStorage.setItem("userdatabase", JSON.stringify(RegisterUserDataBase));
+  //   alert("User data has been successfully saved to local storage");
+  // } catch (err) {
+  //   console.log("Error saving user data to local storage");
+  // }
 
   window.location.href = "./login.html";
 });

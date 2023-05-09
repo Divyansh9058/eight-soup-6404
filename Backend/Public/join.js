@@ -1,10 +1,35 @@
 const socket = io("http://localhost:3000/", { transports: ["websocket"] });
-const RegisterUserDataBase =
-  JSON.parse(localStorage.getItem("userdatabase")) || [];
-const username = sessionStorage.getItem("name");
+// const RegisterUserDataBase =
+// JSON.parse(localStorage.getItem("userdatabase")) || [];
+// const username = sessionStorage.getItem("name");
+let username
+function getName(username) {
+  Swal.fire({
+    title: 'Enter Your Name',
+    input: 'text',
+    showCancelButton: true,
+    confirmButtonText: 'Submit',
+    cancelButtonText: 'Cancel',
+    inputValidator: (value) => {
+      if (!value) {
+        return 'Please enter your name!';
+      }
+    }
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Store the name in a JavaScript variable
+      username = result.value;
+      console.log('Name:', username);
+      socket.emit("username", username);
+      // You can perform further actions with the name variable
+    }
+  });
+}
+
+
 console.log(username);
 console.log(socket);
-socket.emit("username", username);
+
 
 let namediv = document.getElementById("names");
 
@@ -85,35 +110,35 @@ send.addEventListener("click", (e) => {
   }
 });
 
-text.addEventListener("keydown", (e) => {
-  if (e.key === "Enter" && text.value.length !== 0) {
-    socket.emit("message", text.value);
-    text.value = "";
-  }
-});
+// text.addEventListener("keydown", (e) => {
+//   if (e.key === "Enter" && text.value.length !== 0) {
+//     socket.emit("message", text.value);
+//     text.value = "";
+//   }
+// });
 
-document.addEventListener("click", (e) => {
-  if (e.target !== send && e.target !== text) {
-    e.preventDefault();
-  }
-});
-
-socket.on("createMessage", (message, userName) => {
+// document.addEventListener("click", (e) => {
+//   if (e.target !== send && e.target !== text) {
+//     e.preventDefault();
+//   }
+// });
+getName(username);
+socket.on("createMessage", (message, username) => {
   var time = new Date();
   let cur_time = time.toLocaleString("en-US", {
     hour: "numeric",
     minute: "numeric",
     hour12: true,
   });
-
-  let currentUser = RegisterUserDataBase.find(
-    (user) => user.email === userName
-  );
-  let displayName = currentUser ? currentUser.name : userName;
+  
+  // let currentUser = RegisterUserDataBase.find(
+  //   (user) => user.email === userName
+  // );
+  // let displayName = currentUser ? currentUser.name : userName;
 
   messages.innerHTML += `<div class="message">
-        <span  ${
-          true === true ? "class=outgoing" : "class=incoming"
-        }>${message}  <span class="time">   (From ${displayName} ${cur_time}) <span></span>
-    </div>`;
+  <span  ${true === true ? "class=outgoing" : "class=incoming"
+}>${message}  <span class="time">   (From ${username} ${cur_time}) <span></span>
+</div>`;
+
 });

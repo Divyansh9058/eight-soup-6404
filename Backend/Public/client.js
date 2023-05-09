@@ -38,9 +38,9 @@ var handleMove = function (source, target) {
 
 // var socket = io();
 
-window.onclick = function (e) {
-  socket.emit('message', 'I am client');
-};
+// window.onclick = function (e) {
+//   socket.emit('message', 'I am client');
+// };
 
 var handleMove = function (source, target) {
   var move = game.move({ from: source, to: target });
