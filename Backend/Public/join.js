@@ -1,4 +1,4 @@
-const socket = io("http://localhost:3000/", { transports: ["websocket"] });
+const socket = io("https://rapid-chess-back.onrender.com/", { transports: ["websocket"] });
 // const RegisterUserDataBase =
 localStorage.getItem("name") || [];
 // const username = sessionStorage.getItem("name");

@@ -1,5 +1,5 @@
 let submit_register = document.querySelector(".registerform");
-let apiuser = "http://localhost:3000/user/";
+let apiuser = "https://rapid-chess-back.onrender.com/user/";
 
 submit_register.addEventListener("submit", async (event) => {
   event.preventDefault();

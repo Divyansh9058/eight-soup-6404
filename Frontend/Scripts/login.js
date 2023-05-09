@@ -1,6 +1,6 @@
 let inputloginform = document.querySelector(".loginform");
 
-let apiuser="http://localhost:3000/user/"
+let apiuser="https://rapid-chess-back.onrender.com/user/"
 
 inputloginform.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -41,7 +41,7 @@ async function login(obj) {
                 icon: "success",
               }).then((res) => {
                 if (res.value) {
-                  window.location.href = "http://localhost:3000/chess/";
+                  window.location.href = "https://rapid-chess-back.onrender.com/chess/";
                 } else {
                   Swal.fire({
                     title: "Wrong Credentials!",
